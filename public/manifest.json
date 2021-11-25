@@ -1,0 +1,16 @@
+{
+  "name": "Pokédex App",
+  "short_name": "Pokédex",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait"
+}

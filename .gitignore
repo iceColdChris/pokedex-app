@@ -121,3 +121,7 @@ modules.xml
 
 # Sonarlint plugin
 .idea/sonarlint
+
+# Ignore auto generated SW
+/public/sw.js
+/public/workbox-*.js

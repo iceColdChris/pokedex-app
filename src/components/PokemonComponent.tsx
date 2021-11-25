@@ -9,7 +9,7 @@ type PokemonComponentProps = {
 
 const PokemonComponent = ({ id, name, image }: PokemonComponentProps) => {
   return (
-    <Link href={`/pokemon/${name}`}>
+    <Link href={`/pokemon/${name}`} passHref>
       <div className="card lg:card-side bordered shadow" key={id}>
         <figure>
           <Image
