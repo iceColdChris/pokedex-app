@@ -26,10 +26,12 @@
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {
+    "@favware/graphql-pokemon": "^6.2.1",
     "@next/bundle-analyzer": "^12.0.4",
     "@types/graphql": "^14.5.0",
     "@types/node": "^16.11.10",
     "@types/react": "^17.0.37",
+    "@types/react-virtualized": "^9.21.15",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.0",

@@ -1,9 +1,0 @@
-query {
-    pokemons(limit: 251, offset: 0) {
-        results {
-            url
-            name
-            image
-        }
-    }
-}

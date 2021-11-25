@@ -1,0 +1,16 @@
+query PokemonInfoQuery($pokemon: PokemonEnum!) {
+    getPokemon(pokemon: $pokemon reverseFlavorTexts: true takeFlavorTexts: 1) {
+        num
+        types
+        abilities { first second hidden }
+        gender { male female }
+        height
+        weight
+        flavorTexts { game flavor }
+        isEggObtainable
+        minimumHatchTime
+        maximumHatchTime
+        sprite
+        shinySprite
+    }
+}

@@ -1,15 +1,11 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
 
 import '../styles/main.css';
-
-const client = new ApolloClient({
-  uri: 'https://graphql-pokeapi.vercel.app/api/graphql',
-  cache: new InMemoryCache(),
-});
+import { pokeClient } from '../graphql/clients';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ApolloProvider client={client}>
+  <ApolloProvider client={pokeClient}>
     <Component {...pageProps} />
   </ApolloProvider>
 );
