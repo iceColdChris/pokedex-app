@@ -10,9 +10,10 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div id="container" className="flex flex-col">
+  <div className="flex flex-col h-screen antialiased">
     {props.meta}
-    <header className=" sticky top-0 navbar mb-2 shadow-lg bg-neutral text-neutral-content">
+
+    <header className="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
       <div className="flex-1 px-2 mx-2">
         <span className="text-lg font-bold">{AppConfig.title}</span>
       </div>
@@ -27,17 +28,18 @@ const Main = (props: IMainProps) => (
         </div>
       </div>
     </header>
-    <main className="antialiased w-full relative text-gray-700">
-      <div className="max-w-screen-md mx-auto container">
-        <div className="py-5 text-xl content">{props.children}</div>
-      </div>
+    <main className="flex-1 overflow-y-auto">
+      <div className="max-w-screen-md mx-auto container">{props.children}</div>
     </main>
-    <footer className="sticky bottom-0 p-4 footer text-base-content">
-      © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
-      <span role="img" aria-label="Love">
-        ♥
-      </span>{' '}
-      by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
+    <footer className="py-5 footer text-base-content flex items-center justify-center">
+      © Copyright {new Date().getFullYear()} {AppConfig.title}.
+      <div className="flex flex-row">
+        Powered with{' '}
+        <span role="img" aria-label="Love">
+          ♥
+        </span>{' '}
+        by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
+      </div>
     </footer>
   </div>
 );
