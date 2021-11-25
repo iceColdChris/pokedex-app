@@ -10,61 +10,35 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="antialiased w-full text-gray-700 px-1">
+  <div id="container" className="flex flex-col">
     {props.meta}
-
-    <div className="max-w-screen-md mx-auto">
-      <div className="border-b border-gray-300">
-        <div className="pt-16 pb-8">
-          <div className="font-bold text-3xl text-gray-900">
-            {AppConfig.title}
-          </div>
-          <div className="text-xl">{AppConfig.description}</div>
-        </div>
-        <div>
-          <ul className="flex flex-wrap text-xl">
-            <li className="mr-6">
-              <Link href="/">
-                <a className="text-gray-700 border-none hover:text-gray-900">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link href="/about/">
-                <a className="text-gray-700 border-none hover:text-gray-900">
-                  About
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a
-                className="text-gray-700 border-none hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
-              >
-                GitHub
-              </a>
-            </li>
-          </ul>
+    <header className=" sticky top-0 navbar mb-2 shadow-lg bg-neutral text-neutral-content">
+      <div className="flex-1 px-2 mx-2">
+        <span className="text-lg font-bold">{AppConfig.title}</span>
+      </div>
+      <div className="flex-none hidden px-2 mx-2 lg:flex">
+        <div className="flex items-stretch">
+          <Link href={'/'}>
+            <a className="btn btn-ghost btn-sm rounded-btn">Home</a>
+          </Link>
+          <Link href={'/about/'}>
+            <a className="btn btn-ghost btn-sm rounded-btn">About</a>
+          </Link>
         </div>
       </div>
-
-      <div className="py-5 text-xl content">{props.children}</div>
-
-      <div className="border-t border-gray-300 text-center py-8 text-sm">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
-        <span role="img" aria-label="Love">
-          ♥
-        </span>{' '}
-        by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
-        {/*
-         * PLEASE READ THIS SECTION
-         * We'll really appreciate if you could have a link to our website
-         * The link doesn't need to appear on every pages, one link on one page is enough.
-         * Thank you for your support it'll mean a lot for us.
-         */}
+    </header>
+    <main className="antialiased w-full relative text-gray-700">
+      <div className="max-w-screen-md mx-auto container">
+        <div className="py-5 text-xl content">{props.children}</div>
       </div>
-    </div>
+    </main>
+    <footer className="sticky bottom-0 p-4 footer text-base-content">
+      © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
+      <span role="img" aria-label="Love">
+        ♥
+      </span>{' '}
+      by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
+    </footer>
   </div>
 );
 
